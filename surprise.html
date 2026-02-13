@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',cursive;scroll-behavior:smooth;}
+
+body{
+background:linear-gradient(to bottom,
+#ffd6e7 0%,
+#ffffff 20%,
+#ffffff 80%,
+#ffd6e7 100%);
+color:#333;
+overflow-x:hidden;
+}
+
+/* floating hearts */
+.hearts{position:fixed;width:100%;height:100%;top:0;left:0;overflow:hidden;z-index:-1;}
+.heart{position:absolute;bottom:-20px;width:12px;height:12px;background:#ff9bbd;transform:rotate(45deg);animation:float 12s linear infinite;opacity:.35;}
+.heart:before,.heart:after{content:'';position:absolute;width:12px;height:12px;background:#ff9bbd;border-radius:50%;}
+.heart:before{top:-6px;left:0;}
+.heart:after{left:-6px;top:0;}
+@keyframes float{0%{transform:translateY(0) rotate(45deg);opacity:.5;}100%{transform:translateY(-120vh) rotate(45deg);opacity:0;}}
+
+/* intro */
+#intro{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:25px;
+font-size:22px;
+line-height:1.6;
+color:#b03060;
+}
+
+.section{min-height:100vh;padding:40px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+
+.memory{
+border:2px solid #ff4d88;
+padding:18px;
+border-radius:20px;
+font-size:22px;
+cursor:pointer;
+transition:.3s;
+margin-bottom:25px;
+background:white;
+}
+
+.memory:hover{background:#ffe3ef;}
+
+.content{max-height:0;overflow:hidden;transition:max-height 1s ease;width:100%;}
+.open{max-height:5000px;}
+
+.gallery img{
+width:92%;
+max-width:360px;
+border-radius:18px;
+margin:12px 0;
+opacity:0;
+transform:translateY(25px);
+transition:1.2s ease;
+box-shadow:0 0 18px rgba(255,105,150,.35);
+}
+
+.gallery img.show{opacity:1;transform:translateY(0);}
+
+.highlight{
+color:#d6336c;
+font-size:20px;
+margin-top:15px;
+font-weight:bold;
+}
+
+.note{
+margin-top:10px;
+font-size:17px;
+line-height:1.6;
+color:#000;
+}
+
+#final{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:44px;
+text-align:center;
+opacity:0;
+color:#ff2f75;
+cursor:pointer;
+padding:20px;
+}
+
+#final.show{
+opacity:1;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+/* LOVE LETTER POPUP */
+#letter{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.97);
+display:none;
+align-items:center;
+justify-content:center;
+padding:30px;
+text-align:center;
+z-index:1000;
+}
+
+#letterBox{
+max-width:500px;
+font-size:20px;
+line-height:1.8;
+color:#b03060;
+}
+
+#close{
+margin-top:30px;
+padding:12px 24px;
+border:none;
+background:#ff4d88;
+color:white;
+border-radius:12px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgm" loop>
+<source src="Bgm.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts"></div>
+
+<section id="intro">
+<div>
+Hello Punya… Happy Valentine’s Day ❤️<br><br>
+I wanted us to pause for a moment…<br>
+and look back at our beautiful journey together.<br><br>
+So I made something for us…<br><br>
+<b>Scroll slowly ↓</b>
+</div>
+</section>
+
+<!-- (ALL YOUR CHAPTERS REMAIN EXACTLY SAME — I DID NOT TOUCH THEM) -->
+
+<!-- CHAPTER 1 -->
+<section class="section">
+<div class="memory" onclick="toggle(this)">🌼 Chapter 1 — The First Page<br><small>4 September • Teacher’s Day</small></div>
+<div class="content">
+<div class="gallery">
+<img src="Teacher1.jpg">
+<img src="Teacher2.jpg">
+<img src="Teacher3.jpg">
+</div>
+<div class="highlight">I found a friend in you before I ever knew I’d fall in love with you ❤️</div>
+<div class="note">It was a very fun day for both of us....i found a friend in u which i never thought would develop into such a beautiful bond. I held ur hands at the stairs to support u not knowing that i will be holding these hands for the rest of my life 🫠.</div>
+</div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="section">
+<div class="memory" onclick="toggle(this)">🎆 Chapter 2 — The Unsaid Feelings<br><small>28 September • Garba Night</small></div>
+<div class="content">
+<div class="gallery">
+<img src="Garba1.jpg">
+<img src="Garba2.jpg">
+<img src="Garba3.jpg">
+<img src="Garba4.jpg">
+</div>
+<div class="highlight">By now we both liked each other… even if we hadn’t said it yet 👀</div>
+<div class="note">Everyone could see it.....except us. Both had yearning eyes. Both wanted each other. There was a chemistry which was evident to all. We definitely were more than 'just friends'. 👀</div>
+</div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="section">
+<div class="memory" onclick="toggle(this)">❤️ Chapter 3 — The Confession<br><small>4 October • The Evening That Changed Everything</small></div>
+<div class="content">
+<div class="gallery">
+<img src="Confession1.jpg">
+<img src="Confession2.jpg">
+</div>
+<div class="highlight">Where it all began and we finally became “us” 🫠❤️</div>
+<div class="note">A calm saturday evening which took the most unexpected turn. You confessed and so did I....the yearn was over...the wait was done. We both finally became one. ❤️</div>
+</div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="section">
+<div class="memory" onclick="toggle(this)">🫠 Chapter 4 — Our First Moment<br><small>17 October • The Park</small></div>
+<div class="content">
+<div class="gallery">
+<img src="Park1.jpg">
+<img src="Park2.jpg">
+<img src="Park3.jpg">
+<img src="Park4.jpg">
+</div>
+<div class="highlight">I held your hand for the first time and my soul never felt calmer</div>
+<div class="note">It was our 'unofficial' date. I still remember the way I shivered js from holding your hand....you rested your head on my shoulder and it was the best feeling in this world. 🫠 I js did not want those 1.5hrs to end.</div>
+</div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="section">
+<div class="memory" onclick="toggle(this)">💫 Chapter 5 — The Beginning of Forever<br><small>24 November • Our First Official Date</small></div>
+<div class="content">
+<div class="gallery">
+<img src="Date1.jpg">
+<img src="Date2.jpg">
+<img src="Date3.jpg">
+<img src="Date4.jpg">
+</div>
+<div class="highlight">We hugged for the first time… and not very later our lips met 😘❤️</div>
+<div class="note">It was our FIRST OFFICIAL DATE. I could never imagine it. We roamed around had fun...literally the best day ever. We hugged for the first time....I felt your warmth, your love....and not very later....our lips met for the first time 😘❤️.</div>
+
+<h2 style="margin-top:40px;color:#d6336c;">One more thing… 🎧</h2>
+<audio controls>
+<source src="Surprise.m4a" type="audio/mp4">
+</audio>
+
+</div>
+</section>
+
+<section id="final">Tap me once more ❤️</section>
+
+<div id="letter">
+<div id="letterBox">
+Punya,<br><br>
+Out of all the people in this world…<br>
+I somehow found you.<br><br>
+You became my peace, my comfort,<br>
+and the happiest part of my day.<br><br>
+I don’t know what the future holds,<br>
+but I know one thing —<br>
+I want every version of my future<br>
+to have you in it.<br><br>
+I love you. Always.<br><br>
+— Yours ❤️
+<br><button id="close">Close</button>
+</div>
+</div>
+
+<script>
+
+/* BGM FIX — plays on first tap */
+const music=document.getElementById("bgm");
+document.body.addEventListener("click",()=>{
+music.volume=0.45;
+music.play();
+},{once:true});
+
+function toggle(el){
+let content=el.nextElementSibling;
+content.classList.toggle("open");
+setTimeout(()=>{
+let imgs=content.querySelectorAll("img");
+imgs.forEach((img,i)=>{setTimeout(()=>img.classList.add("show"),i*400);});
+},200);
+}
+
+/* floating hearts */
+const hearts=document.querySelector(".hearts");
+for(let i=0;i<35;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.style.left=Math.random()*100+"%";
+h.style.animationDuration=8+Math.random()*8+"s";
+h.style.opacity=Math.random();
+hearts.appendChild(h);
+}
+
+/* final reveal */
+window.addEventListener("scroll",()=>{
+if(window.innerHeight+window.scrollY>=document.body.offsetHeight-5){
+document.getElementById("final").classList.add("show");
+}
+});
+
+/* letter open */
+document.getElementById("final").onclick=()=>{
+document.getElementById("letter").style.display="flex";
+};
+
+/* letter close */
+document.getElementById("close").onclick=()=>{
+document.getElementById("letter").style.display="none";
+};
+
+</script>
+
+</body>
+</html>
